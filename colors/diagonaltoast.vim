@@ -1,6 +1,6 @@
 " File:       diagonaltoast.vim
 " Maintainer: Brian McElhany
-" URL:        https://github.com/w0ng/vim-hybrid
+" URL:        https://github.com/bmcelhany/diagonaltoast
 " Modified:   27 Jan 2013 07:33 AM AEST
 " License:    MIT
 
@@ -44,9 +44,9 @@
 "
 " 2.  Add to ~/.vimrc:
 "
-"         let g:hybrid_custom_term_colors = 1
-"         let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-"         colorscheme hybrid
+"         let g:diagonaltoast_custom_term_colors = 1
+"         let g:diagonaltoast_reduced_contrast = 1 " Remove this line if using the default palette.
+"         colorscheme diagonaltoast
 "
 " For OSX users (iTerm):
 "
@@ -60,9 +60,9 @@
 "
 " 2.  Add to ~/.vimrc:
 "
-"         let g:hybrid_custom_term_colors = 1
-"         let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-"         colorscheme hybrid
+"         let g:diagonaltoast_custom_term_colors = 1
+"         let g:diagonaltoast_reduced_contrast = 1 " Remove this line if using the default palette.
+"         colorscheme diagonaltoast
 
 "}}}
 " Initialisation:"{{{
@@ -76,7 +76,7 @@ endif
 
 let s:style = &background
 
-let g:colors_name = "hybrid"
+let g:colors_name = "diagonaltoast"
 
 "}}}
 " GUI And Cterm Palettes:"{{{
@@ -84,7 +84,7 @@ let g:colors_name = "hybrid"
 
 let s:palette = {'gui' : {} , 'cterm' : {}}
 
-if exists("g:hybrid_reduced_contrast") && g:hybrid_reduced_contrast == 1
+if exists("g:diagonaltoast_reduced_contrast") && g:diagonaltoast_reduced_contrast == 1
   let s:gui_background = "#232c31"
   let s:gui_selection  = "#425059"
   let s:gui_line       = "#2d3c46"
@@ -120,7 +120,7 @@ let s:palette.gui.darkcyan   = { 'dark' : "#005f5f"        , 'light' : "#005f00"
 let s:palette.gui.darkred    = { 'dark' : "#5f0000"        , 'light' : "#d7d7ff" }
 let s:palette.gui.darkpurple = { 'dark' : "#5f005f"        , 'light' : "#5f005f" }
 
-if exists("g:hybrid_custom_term_colors") && g:hybrid_custom_term_colors == 1
+if exists("g:diagonaltoast_custom_term_colors") && g:diagonaltoast_custom_term_colors == 1
   let s:cterm_foreground = "15"  " White
   let s:cterm_selection  = "8"   " DarkGrey
   let s:cterm_line       = "0"   " Black
@@ -331,7 +331,7 @@ hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NO
 "   WildMenu"
 
 " Use defined custom background colour for terminal Vim.
-if !has('gui_running') && exists("g:hybrid_custom_term_colors") && g:hybrid_custom_term_colors == 1
+if !has('gui_running') && exists("g:diagonaltoast_custom_term_colors") && g:diagonaltoast_custom_term_colors == 1
   let s:bg_normal = s:bg_none
 else
   let s:bg_normal = s:bg_background
